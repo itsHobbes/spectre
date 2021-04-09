@@ -14,5 +14,4 @@ public class AppTest {
     logger.info("test");
     assertTrue(true);
   }
-
 }
