@@ -1,6 +1,7 @@
-package uk.co.markg.spectre.res.user;
+package uk.co.markg.spectre.res.guild;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
+import uk.co.markg.spectre.res.user.UserDTO;
 
 public class MemberDTO {
 
