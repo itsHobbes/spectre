@@ -1,35 +1,42 @@
 package uk.co.markg.spectre.res.user;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
 
 public class UserDTO {
 
-  @JsonProperty
-  private long id;
-  @JsonProperty
-  private String username;
-  @JsonProperty
-  private String discriminator;
-  @JsonProperty
-  private String avatar; // n
-  @JsonProperty
-  private boolean bot; // o
-  @JsonProperty
-  private boolean system; // o
-  @JsonProperty("mfa_enabled")
-  private boolean mfa; // o
-  @JsonProperty
-  private String locale; // o
-  @JsonProperty
-  private boolean verified; // o
-  @JsonProperty
-  private String email; // o&n
-  @JsonProperty
-  private int flags; // o
-  @JsonProperty("premium_type")
-  private int premiumType; // o
-  @JsonProperty("public_flags")
-  private int publicFlags; // o
+  private final long id;
+  private final String username;
+  private final String discriminator;
+  private final String avatar; // n
+  private final boolean bot; // o
+  private final boolean system; // o
+  private final boolean mfaEnabled; // o
+  private final String locale; // o
+  private final boolean verified; // o
+  private final String email; // o&n
+  private final int flags; // o
+  private final int premiumType; // o
+  private final int publicFlags; // o
+
+  @JsonCreator
+  public UserDTO(long id, String username, String discriminator, String avatar, boolean bot,
+      boolean system, boolean mfaEnabled, String locale, boolean verified, String email, int flags,
+      int premiumType, int publicFlags) {
+    this.id = id;
+    this.username = username;
+    this.discriminator = discriminator;
+    this.avatar = avatar;
+    this.bot = bot;
+    this.system = system;
+    this.mfaEnabled = mfaEnabled;
+    this.locale = locale;
+    this.verified = verified;
+    this.email = email;
+    this.flags = flags;
+    this.premiumType = premiumType;
+    this.publicFlags = publicFlags;
+
+  }
 
   /**
    * @return the id
@@ -77,7 +84,7 @@ public class UserDTO {
    * @return the mfa
    */
   public boolean isMfa() {
-    return mfa;
+    return mfaEnabled;
   }
 
   /**
